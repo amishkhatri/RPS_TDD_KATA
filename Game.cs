@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml.Linq;
 
 
@@ -37,6 +38,30 @@ namespace Xp.TDD.Rps.BusinessLogic
             set { player2 = value; }
         }
 
+
+        private string round1Winner;
+        public string Round1Winner
+        {
+            get { return round1Winner; }
+            set { round1Winner = value; }
+        }
+
+        private string round2Winner;
+        public string Round2Winner
+        {
+            get { return round2Winner; }
+            set { round2Winner = value; }
+        }
+
+        private string round3Winner;
+        public string Round3Winner
+        {
+            get { return round3Winner; }
+            set { round3Winner = value; }
+        }
+
+
+
         private string _message;
         public string Message   
         {
@@ -45,14 +70,36 @@ namespace Xp.TDD.Rps.BusinessLogic
         }
 
 
-        public string ExecuteRules()
+        private string _roundMessage;
+        public string RoundMessage
         {
-          
-            var Result = (ValidateFields()) ? (_rule.GetRuleResult(this.Player1, this.Player2)) : this.Message;
-
-            return Result;
+            get { return _roundMessage; }
+            set { _roundMessage = value; }
         }
 
+
+        public string ExecuteRules()
+        {
+            var result = (ValidateFields()) ? (_rule.GetRuleResult(this.Player1, this.Player2)) : this.Message;
+
+            return result;
+        }
+
+        public string FindRoundWinner()
+        {
+            string result = string.Empty;
+            List<string> results = new List<string>();
+
+            results = _rule.GetRoundRuleResult(this.Round1Winner, this.Round2Winner, this.Round3Winner);
+
+            result= results.ElementAt(0);
+
+            this.RoundMessage = results.ElementAt(1);
+
+            return result;
+        }
+        
+        
         private bool ValidateFields() 
         {
 
