@@ -57,7 +57,7 @@ namespace Xp.TDD.Rps.BusinessLogic
                         RoundRules.TryGetValue((Round1Winner, Round2Winner, Round3Winner), out results);
 
                 return results;
-                //return (RoundRules.TryGetValue((Round1Winner, Round2Winner, Round3Winner), out result)) ? result : string.Empty;
+               
             }
             catch (System.Exception ex)
             {

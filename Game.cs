@@ -18,7 +18,7 @@ namespace Xp.TDD.Rps.BusinessLogic
             get { return Rules; }
             set { Rules = value; }
         }
-
+         
         public Game()
         {
             _rule = new Rule();
