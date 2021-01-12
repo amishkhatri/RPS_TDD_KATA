@@ -47,9 +47,8 @@ namespace Xp.TDD.Rps.BusinessLogic
 
         public string ExecuteRules()
         {
-            string Result = "";
-
-            Result = (ValidateFields()) ? (_rule.GetRuleResult(this.Player1, this.Player2)) : this.Message;
+          
+            var Result = (ValidateFields()) ? (_rule.GetRuleResult(this.Player1, this.Player2)) : this.Message;
 
             return Result;
         }

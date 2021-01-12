@@ -18,18 +18,17 @@ namespace Xp.TDD.Rps.BusinessLogic
 
         }
         
-        public string GetRuleResult(string ItemA,string ItemB)
+        public string GetRuleResult(string PlayerItemA,string PlayerItemB)
         {
-            string result="";
+            string result= string.Empty;
+
             try
             {
-                return (Rules.TryGetValue((ItemA, ItemB), out result)) ? result : string.Empty;
-                
+                return (Rules.TryGetValue((PlayerItemA, PlayerItemB), out result)) ? result : string.Empty;                
             }
             catch(System.Exception ex)
             {
                 throw ex;
-
             }
             
         }

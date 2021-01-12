@@ -62,7 +62,7 @@ namespace NUnitTDDRPS
         }
 
         [Test]
-        public void ShouldReturn_Pass_When_Player1_Rock_Player2_Scissors_Return_Player2()
+        public void ShouldReturn_Pass_When_Player1_Rock_Player2_Scissors_Return_Player1()
         {
             game.Player1 = "Rock";
             game.Player2 = "Scissors";
