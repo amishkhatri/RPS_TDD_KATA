@@ -51,10 +51,6 @@ namespace Xp.TDD.Rps.BusinessLogic
 
             Result = (ValidateFields()) ? (_rule.GetRuleResult(this.Player1, this.Player2)) : this.Message;
 
-            //if (ValidateFields())
-            //    Winner = (_rule.GetRuleResult(this.Player1, this.Player2));
-            //else
-            //    Winner = this.Message;
             return Result;
         }
 
