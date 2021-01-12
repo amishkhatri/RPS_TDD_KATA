@@ -10,6 +10,12 @@ namespace Xp.TDD.Rps.BusinessLogic
         {
             Rules.Add(("Paper", "Paper"), "Tie");
             Rules.Add(("Rock", "Scissors"), "Player1");
+            Rules.Add(("Rock", "Paper"), "Player2");
+            Rules.Add(("Scissors", "Paper"), "Player1");
+            Rules.Add(("Scissors", "Rock"), "Player2");
+            Rules.Add(("Paper", "Rock"), "Player1");
+            Rules.Add(("Paper", "Scissors"), "Player2");
+
         }
         
         public string GetRuleResult(string ItemA,string ItemB)

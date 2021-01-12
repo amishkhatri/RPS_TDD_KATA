@@ -60,7 +60,13 @@ namespace Xp.TDD.Rps.BusinessLogic
 
         private bool ValidateFields() 
         {
-            if (string.IsNullOrEmpty(this.Player1))
+
+            if (string.IsNullOrEmpty(this.Player1) && string.IsNullOrEmpty(this.Player2))
+            {
+                this.Message = "All inputs are empty.";
+                return false;
+            }
+            else if (string.IsNullOrEmpty(this.Player1))
             {
                 this.Message = "Player1 input is empty.";
                 return false;
