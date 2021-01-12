@@ -279,7 +279,6 @@ namespace NUnitTDDRPS
         }
 
 
-
         [Test]
         public void ShouldReturn_Pass_When_Round_1_Player2_Round_2_3_Tie_Result_P2()
         {

@@ -60,8 +60,6 @@ namespace Xp.TDD.Rps.BusinessLogic
             set { round3Winner = value; }
         }
 
-
-
         private string _message;
         public string Message   
         {
