@@ -81,6 +81,7 @@ namespace Xp.TDD.Rps.BusinessLogic
             var result = (ValidateFields()) ? (_rule.GetRuleResult(this.Player1, this.Player2)) : this.Message;
 
             return result;
+
         }
 
         public string FindRoundWinner()
