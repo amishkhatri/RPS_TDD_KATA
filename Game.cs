@@ -101,26 +101,17 @@ namespace Xp.TDD.Rps.BusinessLogic
         private bool ValidateFields() 
         {
 
-            if (string.IsNullOrEmpty(this.Player1) && string.IsNullOrEmpty(this.Player2))
-            {
-                this.Message = "All inputs are empty.";
-                return false;
-            }
-            else if (string.IsNullOrEmpty(this.Player1))
-            {
-                this.Message = "Player1 input is empty.";
-                return false;
-            }
-            else if (string.IsNullOrEmpty(this.Player2))
-            {
-                this.Message = "Player2 input is empty.";
-                return false;
-            }
-            else
-            {
-                this.Message = string.Empty;
-                return true;
-            }
+            bool result=false;
+
+            result = (string.IsNullOrEmpty(this.Player1) && string.IsNullOrEmpty(this.Player2)) ? false :
+                (string.IsNullOrEmpty(this.Player1)) ? false : (string.IsNullOrEmpty(this.Player2)) ? false : true;
+
+            this.Message = (string.IsNullOrEmpty(this.Player1) && string.IsNullOrEmpty(this.Player2)) ? "All inputs are empty." :
+                (string.IsNullOrEmpty(this.Player1)) ? "Player1 input is empty." : (string.IsNullOrEmpty(this.Player2)) ? "Player2 input is empty." : string.Empty;
+
+            return result;
+
+            
         }
 
 
